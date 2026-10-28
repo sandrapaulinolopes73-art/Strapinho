@@ -1,77 +1,183 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- 
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 
         Bootstrap5: Importa o componente CSS da CDN.
         Obtido de https://getbootstrap.com/docs/5.3/getting-started/introduction/#cdn-links
     -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <!-- 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- 
         Bootstrap5: Importa a biblioteca de ícones oficial do Bootstrap.
         Obtido de https://github.com/twbs/icons/blob/main/README.md#cdn
         Aqui, você pode suar outras biblioteas com o "Font Awesome" no lugar dessa.
     -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css"
-    />
-    <title>Strapinho</title>
-  </head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css">
+  <title>Strapinho</title>
 
-  <body>
-    <!-- Menu principal - Navbar -->
-    <nav class="navbar navbar-expand-sm navbar-dark bg-secondary">
-      <div class="container">
-        <a class="navbar-brand" href="javascript:void(0)"><i class="bi bi-bootstrap text-info"></i> Sandra Lopes</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#mynavbar"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="mynavbar">
-          <ul class="navbar-nav me-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="javascript:void(0)">Início</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="javascript:void(0)">Conteúdo</a>
-            </li>
+<style>
+     /* Fundo experimental da página */
+    body {
+      background-color: rgb(42, 112, 115);
+    }
 
-            <!-- Dropdown -->
-              <li class="nav-item dropdown">
+    .navbar-brand {
+      font-size: 1.5rem;
+    }
+
+    body>header {
+      background-color: purple;
+    }
+
+    body>header i {
+      font-size: 4rem;
+    }
+  </style>
+</head>
+
+<body data-bs-theme="light">
+
+  <!-- 
+  Menu principal - Navbar 
+  Referências: https://www.w3schools.com/bootstrap5/bootstrap_navbar.php
+  OBS: Vamos substitulir `javascript:void(0)` pelo link de cada página.
+  -->
+  <nav class="navbar navbar-expand-md navbar-dark text-bg-success fixed-top">
+    <div class="container">
+
+      <!-- A "brand" (marca) pode ser um nome ou uma imagem. -->
+      <a class="navbar-brand" href="index.html"><i class="bi bi-bootstrap-fill text-warning"></i></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mynavbar">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="content.html">Conteúdo</a></li>
+
+          <!-- 
+          Dropdown
+          Referências: https://www.w3schools.com/bootstrap5/bootstrap_navbar.php
+                       https://www.w3schools.com/bootstrap5/bootstrap_dropdowns.php 
+          OBS: Não altere `href="#"` de `dropdown-toggle`!
+          -->
+          <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Sobre</a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Sobre o <Samp></Samp>site</a></li>
-              <li><a class="dropdown-item" href="#">Sobre o Autor</a></li>
-              <li><a class="dropdown-item" href="#">Políticas de <Pic></Pic>rivacidade</a></li>
-              <li><hr class="dropdown-divider"></hr></li>
-              <li><a class="dropdown-item" href="#">Faça contato</a></li>
+              <li><a class="dropdown-item" href="about_site.html">Sobre o site</a></li>
+              <li><a class="dropdown-item" href="about_author.html">Sobre o autor</a></li>
+              <li><a class="dropdown-item" href="policies.html">Políticas de privacidade</a></li>
+              <li>
+                <hr class="dropdown-divider">
+                </hr>
+              </li>
+              <li><a class="dropdown-item" href="contacts.html">Faça contato</a></li>
             </ul>
           </li>
 
         </ul>
-          <form class="d-flex">
-            <input class="form-control me-2" type="text" placeholder="Search" />
-            <button class="btn btn-primary" type="button">Search</button>
-          </form>
-        </div>
-      </div>
-    </nav>
 
-    <!-- 
+        <!-- 
+        Formulário de pesquisa
+        Referências: https://www.w3schools.com/bootstrap5/bootstrap_forms.php
+        -->
+        <form class="d-flex mt-2 mt-md-0">
+          <div class="input-group">
+            <input class="form-control" type="search" placeholder="Procurar...">
+            <button class="btn btn-warning" type="button"><i class="bi bi-search"></i></button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </nav>
+    <!--
+  Usando a técnica Jumbotron
+  Referências: https://www.w3schools.com/bootstrap5/bootstrap_jumbotron.php
+  -->
+  <header class="text-light" style="margin-top: 4rem;">
+    <div class="container p-3">
+      <h1 class="d-flex align-items-center gap-3 justify-content-center">
+        <i class="bi bi-bootstrap"></i> Strapinho
+      </h1>
+    </div>
+  </header>
+
+  <h2>Bem Vindo</h2>
+
+
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti sed obcaecati aliquam eveniet illum iusto
+        porro dolor itaque eum et quibusdam ipsa alias architecto tenetur, aperiam, inventore aliquid, earum iure?</p>
+
+    </section>
+    <aside class="p-3 bg-dark-subtle flex-shrink-0">
+
+      <!-- 
+        Exemplo de conteúdo desta página.
+        No futuro, virá do back-end.
+      -->
+
+      <h3>Mais coisas</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam dolorum, aliquid facere accusamus enim eaque
+        soluta dolores.</p>
+
+    </aside>
+  </main>
+  <!--Rodepé-->
+  <footer class="bg-success">
+
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <h4>Redes Sociais</h4>
+          <nav>
+            <a href="#" target="_blank">Link 1</a>
+            <a href="#" target="_blank">Link 2</a>
+            <a href="#" target="_blank">Link 3</a>
+            <a href="#" target="_blank">Link 4</a>
+          </nav>
+        </div>
+
+        <div>
+          <h4>Parceiros</h4>
+          <nav>
+            <a href="#" target="_blank">Link 1</a>
+            <a href="#" target="_blank">Link 2</a>
+            <a href="#" target="_blank">Link 3</a>
+            <a href="#" target="_blank">Link 4</a>
+          </nav>
+        </div>
+
+        <div>
+          <h4>Acesso rápido</h4>
+          <nav>
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+            <a href="#">Link 4</a>
+          </nav>
+        </div>
+
+      </div>
+
+      <div class="footer-botton">
+        <a href="index.html"></a>
+      </div>
+    </div>
+
+
+  </footer>
+
+
+  <!-- 
         Bootstrap5: Importa o componente JavaScript da CDN.
         É importante que scripts JavaScript sejam carregadom no final do código,
         salvo em casos especiais.
         Obtido de https://getbootstrap.com/docs/5.3/getting-started/introduction/#cdn-links
     -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
 </html>
