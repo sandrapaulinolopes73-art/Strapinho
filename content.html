@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 
+        Bootstrap5: Importa o componente CSS da CDN.
+        Obtido de https://getbootstrap.com/docs/5.3/getting-started/introduction/#cdn-links
+    -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- 
+        Bootstrap5: Importa a biblioteca de ícones oficial do Bootstrap.
+        Obtido de https://github.com/twbs/icons/blob/main/README.md#cdn
+        Aqui, você pode suar outras biblioteas com o "Font Awesome" no lugar dessa.
+    -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css">
+  <title>Strapinho</title>
+  <style>
+    /* Fundo experimental da página */
+    body {
+      background-color: rgb(23, 91, 94);
+    }
+
+    .navbar-brand {
+      font-size: 1.5rem;
+    }
+
+    body>header {
+      background-color: orange;
+    }
+
+    body>header i {
+      font-size: 4rem;
+    }
+
+    /* Em telas "md" (middle) */
+    @media screen and (min-width: 768px) {
+
+      /* aside tem largura fixa de 250 pixels */
+      body>main>aside {
+        min-width: 250px;
+        max-width: 250px;
+      }
+    }
+
+    /*
+    Primeiro andar do footer
+    Links dos menus do rodapé
+    */
+    .footer-top a {
+      color: rgb(132, 191, 240);
+      text-decoration: none;
+      margin-left: .7rem;
+    }
+
+    .footer-top a:hover {
+      color: var(--bs-warning);
+    }
+
+    /*
+    Segundo andar do footer
+    Ícones usando cores semânticas do Bootstrap
+    */
+
+    .footer-botton a {
+      color: var(--bs-light);
+    }
+
+    .footer-botton a:hover {
+      color: var(--bs-warning);
+    }
+
+    /*
+    Conteúdo principal
+    Cantos arredondados responsivos
+    */
+
+    body>main>article,
+    body>main>section {
+      border-radius: .4rem .4rem 0 0;
+    }
+
+    body>main>aside {
+      border-radius: 0 0 .4rem .4rem;
+    }
+
+    /* em telas "md" ou mais */
+    @media screen and (min-width: 768px) {
+
+      body>main>article,
+      body>main>section {
+        border-radius: .4rem 0 0 .4rem;
+      }
+
+      body>main>aside {
+        border-radius: 0 .4rem .4rem 0;
+      }
+
+    }
+  </style>
+</head>
+
+<body data-bs-theme="light" class="px-2 min-vh-100 d-flex flex-column">
+
+  <!-- 
+  Menu principal - Navbar 
+  Referências: https://www.w3schools.com/bootstrap5/bootstrap_navbar.php
+  OBS: Vamos substitulir `javascript:void(0)` pelo link de cada página.
+  -->
+  <nav class="container navbar navbar-expand-md navbar-dark text-bg-dark fixed-top mx-auto rounded-bottom">
+    <div class="container-fluid">
+
+      <!-- A "brand" (marca) pode ser um nome ou uma imagem. -->
+      <a class="navbar-brand" href="index.html"><i class="bi bi-bootstrap-fill text-warning"></i></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mynavbar">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="content.html">Conteúdo</a></li>
+
+          <!-- 
+          Dropdown
+          Referências: https://www.w3schools.com/bootstrap5/bootstrap_navbar.php
+                       https://www.w3schools.com/bootstrap5/bootstrap_dropdowns.php 
+          OBS: Não altere `href="#"` de `dropdown-toggle`!
+          -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Sobre</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="about_site.html">Sobre o site</a></li>
+              <li><a class="dropdown-item" href="about_author.html">Sobre o autor</a></li>
+              <li><a class="dropdown-item" href="policies.html">Políticas de privacidade</a></li>
+              <li>
+                <hr class="dropdown-divider">
+                </hr>
+              </li>
+              <li><a class="dropdown-item" href="contacts.html">Faça contato</a></li>
+            </ul>
+          </li>
+
+        </ul>
+
+        <!-- 
+        Formulário de pesquisa
+        Referências: https://www.w3schools.com/bootstrap5/bootstrap_forms.php
+        -->
+        <form class="d-flex mt-2 mt-md-0">
+          <div class="input-group">
+            <input class="form-control" type="search" placeholder="Procurar...">
+            <button class="btn btn-warning" type="button"><i class="bi bi-search"></i></button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </nav>
+
+  <!--
+  Usando a técnica Jumbotron
+  Referências: https://www.w3schools.com/bootstrap5/bootstrap_jumbotron.php
+  -->
+  <header class="container rounded text-dark mx-auto p-0" style="margin-top: 4.5rem;">
+    <div class="p-3">
+      <h1 class="d-flex align-items-center gap-3 justify-content-center">
+        <i class="bi bi-bootstrap"></i> Strapinho
+      </h1>
+    </div>
+  </header>
+
+  <main class="container d-flex flex-column flex-md-row p-0 flex-grow-1" style="margin-top: .8rem;">
+    <section class="bg-light p-3 flex-fill flex-grow-1">
+
+      <!-- 
+        Exemplo de conteúdo desta página.
+        No futuro, virá do back-end.
+      -->
+
+      <!-- Carousel -->
+      <div id="demo" class="carousel slide mb-4" data-bs-ride="carousel">
+
+        <!-- Indicators/dots - Botões do carroucel -->
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+          <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+        </div>
+
+        <!-- Imagens do carroucel -->
+        <div class="carousel-inner rounded">
+          <div class="carousel-item active">
+            <img src="https://picsum.photos/seed/00/1100/500" alt="Imagem aleatória 1" class="d-block w-100">
+            <div class="carousel-caption">
+              <p>Imagem legal!</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://picsum.photos/seed/01/1100/500" alt="Imagem aleatória 2" class="d-block w-100">
+            <div class="carousel-caption">
+              <p>Imagem maneira!</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://picsum.photos/seed/02/1100/500" alt="Imagem aleatória 3" class="d-block w-100">
+            <div class="carousel-caption">
+              <p>Imagem supimpa!</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://picsum.photos/seed/03/1100/500" alt="Imagem aleatória 4" class="d-block w-100">
+            <div class="carousel-caption">
+              <p>Imagem super!</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Left and right controls/icons -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+
+      <h2>Página inicial</h2>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt fuga reiciendis quibusdam sunt. Mollitia
+        iste, sint eaque tempore id quam! Modi molestias saepe harum nobis odio. Id dolores nihil sit.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis nesciunt molestias veniam pariatur,
+        exercitationem labore minima corrupti modi facere magnam placeat accusamus dolores sequi repellendus numquam
+        incidunt ut a odit?</p>
+
+      <h4>Imagem Aleatória</h4>
+      <!--
+        Imagem responsiva e centralizada
+        Referências: https://www.w3schools.com/bootstrap5/bootstrap_images.php
+        -->
+      <img src="https://picsum.photos/400/300" alt="Imagem aleatória" class="img-fluid mx-auto d-block">
+
+      <!-- 
+      Listas
+      Referências: https://www.w3schools.com/bootstrap5/bootstrap_list_groups.php
+      -->
+      <h4 class="mt-4">Lista de coisas</h4>
+      <ul class="list-group">
+        <li class="list-group-item">First item</li>
+        <li class="list-group-item">Second item</li>
+        <li class="list-group-item">Third item</li>
+      </ul>
+
+      <h4 class="mt-4">Lista de links</h4>
+      <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action">First item</a>
+        <a href="#" class="list-group-item list-group-item-action">Second item</a>
+        <a href="#" class="list-group-item list-group-item-action">Third item</a>
+      </div>
+
+    </section>
+    <!-- <aside class="p-3 bg-dark-subtle flex-fill flex-md-grow-0 flex-md-shrink-0"></aside> -->
+    <aside class="p-3 bg-dark-subtle">
+
+      <!-- 
+        Exemplo de conteúdo desta página.
+        No futuro, virá do back-end.
+      -->
+
+      <h3>Mais coisas</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam dolorum, aliquid facere accusamus enim eaque
+        soluta dolores.</p>
+
+    </aside>
+  </main>
+
+  <!-- Rodapé -->
+
+  <footer class="container  bg-dark text-light rounded-top" style="margin-top: .7rem;">
+
+    <!-- footer-top e minha classe -->
+    <div class="footer-top d-flex align-items-center justify-content-around">
+      <div class="p-2 mt-2">
+        <h5>Redes Sociais</h5>
+        <nav class="d-flex flex-column lh-lg">
+          <a href="https://facebook.com/" target="_blank"><i class="bi bi-facebook"></i> <span>Facebook</span></a>
+          <a href="https://instagram.com/" target="_blank"><i class="bi bi-instagram"></i> <span>Instagram</span></a>
+          <a href="https://youtube.com/" target="_blank"><i class="bi bi-youtube"></i> <span>Youtube</span></a>
+          <a href="https://github.com/" target="_blank"><i class="bi bi-github"></i> <span>GitHub.com</span></a>
+        </nav>
+      </div>
+
+      <div class="p-2 d-none d-sm-block mt-2">
+        <h5>Parceiros</h5>
+        <nav class="d-flex flex-column lh-lg">
+          <a href="#" target="_blank"><i class="bi bi-snapchat"></i> <span>Snapchat</span></a>
+          <a href="#" target="_blank"><i class="bi bi-bluesky"></i> <span>Bluesky</span></a>
+          <a href="#" target="_blank"><i class="bi bi-pinterest"></i> <span>Pinterest</span></a>
+          <a href="#" target="_blank"><i class="bi bi-behance"></i> <span>Behance</span></a>
+        </nav>
+      </div>
+
+      <div class="p-2 mt-2">
+        <h5>Acesso rápido</h5>
+        <nav class="d-flex flex-column lh-lg">
+          <a href="about_site.html"><i class="bi bi-patch-question-fill"></i> <span>O que somos</span></a>
+          <a href="about_author.html"><i class="bi bi-person-badge-fill"></i> <span>Quem somos</span></a>
+          <a href="contacts.html"><i class="bi bi-chat-dots-fill"></i> <span>Faça Contato</span></a>
+          <a href="policies.html"><i class="bi bi-person-lock"></i> <span>Sua privacidade</span></a>
+        </nav>
+      </div>
+
+    </div>
+
+    <!-- footer-botton é minha classe -->
+    <div class="footer-botton d-flex align-items-center justify-content-between border-top border-secondary mt-3">
+      <a href="index.html" class="fs-2 py-1"><i class="bi bi-house-door-fill"></i></a>
+      <div>&copy; 2026 Strapinho</div>
+      <a href="#top" class="fs-2"><i class="bi bi-arrow-up-square-fill"></i></a>
+    </div>
+
+  </footer>
+
+  <!-- 
+        Bootstrap5: Importa o componente JavaScript da CDN.
+        É importante que scripts JavaScript sejam carregadom no final do código,
+        salvo em casos especiais.
+        Obtido de https://getbootstrap.com/docs/5.3/getting-started/introduction/#cdn-links
+    -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
